@@ -2,9 +2,9 @@ import java.util.Random;
 
 
 public class Player2 extends Player {
+
+
     @Override
-
-
     public String generateRoshambo(String input) {
 
         Random play = new Random();

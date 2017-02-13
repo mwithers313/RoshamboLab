@@ -19,8 +19,10 @@ public class Main {
         } else if ((answer == 'N') || (answer == 'n')) {
         }
         return false;
-
     }
+
+
+
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -40,9 +42,10 @@ public class Main {
             System.out.print("Enter your name: ");
 
 
-            String userName = scan.next(); //input is now players name
+            String userName = scan.next(); //input is now players name * FIXME string validation needed
 
             System.out.println("Would you like to play against Terrence or Phillip?: ");
+
             String playingAgainst = scan.next();
 
 
@@ -51,13 +54,13 @@ public class Main {
 
 
             //Terrence
-            if (playingAgainst.equalsIgnoreCase(player1.getName())) { // if the user selected "Terrence" (Terrence throws Rock everytime)
+            if (playingAgainst.equalsIgnoreCase(player1.getName())) { // if the user selected "Terrence" (*Terrence throws Rock everytime)
 
                 System.out.println("Rock, Paper, or Scissors?(R/P/S): ");
 
-                String playerMove = scan.next();//this is the input that asks user for Rock Paper or Scissor.
+                String playerMove = scan.next();//this is the input that asks user for Rock Paper or Scissor. FIXME validation needed
 
-                System.out.println(userName + ": " + gamePlayer.generateRoshambo(playerMove)); // this returns "username + Rock,paper,or scissor depending on their input
+                System.out.println(userName + ": " + gamePlayer.generateRoshambo(playerMove)); // this returns "username + Rock,Paper,or Scissor depending on their input
 
                 System.out.println((player1.getName()) + ": " + rock); // this player throws rock every time.
 
@@ -80,12 +83,12 @@ public class Main {
 
 
                 //Phillip
-            } else if (playingAgainst.equalsIgnoreCase(player2.getName())) { //if the user selected "Phillip" (Phillip randomly throws)
+            } else if (playingAgainst.equalsIgnoreCase(player2.getName())) { //if the user selected "Phillip" (*Phillip randomly throws)
 
 
                 System.out.println("Rock, Paper, or Scissors?(R/P/S): ");
 
-                String playerMove = scan.next(); //gamePlayers move
+                String playerMove = scan.next(); //gamePlayers move FIXME validation
                 String computerMove = player2.generateRoshambo(playerMove); // this is Phillips move. It is random
 
 
@@ -93,6 +96,7 @@ public class Main {
                 System.out.println(player2.getName() + ": " + computerMove);// prints out Phillips move
 
                 if ((computerMove.equalsIgnoreCase("Scissors")) && (playerMove.equalsIgnoreCase("r"))) { //Phillip throws Scissors, user throws Rock
+
                     System.out.println(userName + " wins!"); // user wins
 
                 } else if ((computerMove.equalsIgnoreCase("Rock")) && (playerMove.equalsIgnoreCase("s"))) {//Phillip throws Rock, user throws Scissors
@@ -125,6 +129,6 @@ public class Main {
             //playAgain?
             playAgain = continueGame();
         }
-        System.out.println("Goodbye");
+        System.out.println("Goodbye");//prints if user does not want to play again
     }
 }
